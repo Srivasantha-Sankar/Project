@@ -1,0 +1,30 @@
+PROJECT 6 🖥️ NLP MACHINE LEARNING - SENTIMENT ANALYZER (KNN)
+
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.neighbors import KNeighborsClassifier
+
+print('NLP MACHINE LEARNING - SENTIMENT ANALYZER (KNN)')
+
+reviews = [
+    'Great product very happy with purchase',
+    'Excellent quality fast delivery loved it',
+    'Worst product ever totally useless',
+    'Bad quality waste of money terrible'
+]
+labels = ['Positive', 'Positive', 'Negative', 'Negative']
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(reviews)
+
+model = KNeighborsClassifier(n_neighbors=1)
+model.fit(X, labels)
+
+test_review = ['Product was very good and excellent quality']
+test_X = vectorizer.transform(test_review)
+
+prediction = model.predict(test_X)
+
+print('Test Input:', test_review[0])
+print('ML Model Prediction:', prediction[0])
+---------------------------------
