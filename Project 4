@@ -1,0 +1,29 @@
+PROJECT 4 🖥️ IMAGE PROCESSING - COLOR TO GRAYSCALE CONVERTER
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+print('IMAGE PROCESSING - COLOR TO GRAYSCALE CONVERTER')
+
+image = np.zeros((200, 200, 3), dtype=np.uint8)
+image[30:170, 30:170] = [255, 100, 50]
+
+def convert_to_grayscale(input_image):
+    grayscale_image = cv2.cvtColor(input_image, cv2.COLOR_RGB2GRAY)
+    return grayscale_image
+
+gray_result = convert_to_grayscale(image)
+
+fig, axes = plt.subplots(1, 2, figsize=(8, 4))
+
+axes[0].imshow(image)
+axes[0].set_title('Original Color Image')
+
+axes[1].imshow(gray_result, cmap='gray')
+axes[1].set_title('Grayscale Image')
+
+plt.show()
+
+print('\nConversion Successful! Color image converted to Black & White.')
+---------------------------------
