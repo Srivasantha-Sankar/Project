@@ -1,0 +1,21 @@
+PROJECT 1 🖥️ MOVIE RECOMMENDATION SYSTEM
+
+import pandas as pd
+
+print('MOVIE RECOMMENDATION SYSTEM')
+
+my_movies = {
+    'Movie_Name': ['GOAT', 'Leo', 'Jailer', 'Good Bad Ugly', 'Kanguva'],
+    'Genre': ['Action', 'Action', 'Action', 'Action', 'Fantasy'],
+    'Actor': ['Vijay', 'Vijay', 'Rajinikanth', 'Ajith', 'Suriya']
+}
+movie_df = pd.DataFrame(my_movies)
+
+def get_recommendations(selected_genre):
+    filtered_movies = movie_df[movie_df['Genre'] == selected_genre]
+    return filtered_movies[['Movie_Name', 'Actor']]
+
+my_choice = 'Action'
+print("Recommended Movies:")
+print(get_recommendations(my_choice))
+---------------------------------
