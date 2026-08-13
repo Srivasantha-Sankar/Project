@@ -1,0 +1,28 @@
+PROJECT 2 🖥️ STUDENT GRADE & PERFORMANCE PREDICTOR
+
+import pandas as pd
+
+print('STUDENT GRADE & PERFORMANCE PREDICTOR')
+student_data = {
+    'student_name': ['sri','aishu','vaishu','vasantha','reena'],
+    'study_hours': [6,4,5,8,7],
+    'test_score':[66,34,50,85,73]
+}
+df = pd.DataFrame(student_data)
+
+def predict_performance(hours,score):
+  if hours>=5 and score>=50:
+    return 'pass'
+  else:
+    return 'fail'
+
+new_student_hours = 8
+new_student_score = 85
+
+result = predict_performance(new_student_hours,new_student_score)
+
+print('student performance report')
+print('study hours:',new_student_hours)
+print('test_score:',new_student_score)
+print('therefore the prediction result :',result)
+---------------------------------
