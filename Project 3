@@ -1,0 +1,29 @@
+PROJECT 3 🖥️ ECOMMERCE DISCOUNT CALCULATOR
+
+import pandas as pd
+
+print('ECOMMERCE DISCOUNT CALCULATOR')
+
+product_data = {
+    'product_name': ['Laptop Bag', 'Wireless Mouse', 'Headphones', 'Keyboard'],
+    'price': [1200, 450, 1500, 800]
+}
+
+df = pd.DataFrame(product_data)
+
+def calculate_final_price(original_price):
+    if original_price >= 1000:
+        discount = original_price * 0.10
+        final_price = original_price - discount
+        return final_price, '10% Discount Applied'
+    else:
+        return original_price, 'No Discount'
+
+item_price = 1200
+final_bill, status = calculate_final_price(item_price)
+
+print('\n--- Checkout Bill ---')
+print('Original Price:', item_price)
+print('Offer Status:', status)
+print('Final Payable Amount:', final_bill)
+---------------------------------
