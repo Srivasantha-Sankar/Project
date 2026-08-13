@@ -7,6 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1WNbdj_DZEMf6-txCNTJBcBReT6c8xOxB
 """
 
+PROJECT 1 🖥️ MOVIE RECOMMENDATION SYSTEM
+
 import pandas as pd
 
 print('MOVIE RECOMMENDATION SYSTEM')
@@ -25,6 +27,8 @@ def get_recommendations(selected_genre):
 my_choice = 'Action'
 print("Recommended Movies:")
 print(get_recommendations(my_choice))
+---------------------------------
+PROJECT 2 🖥️ STUDENT GRADE & PERFORMANCE PREDICTOR
 
 import pandas as pd
 
@@ -51,6 +55,8 @@ print('student performance report')
 print('study hours:',new_student_hours)
 print('test_score:',new_student_score)
 print('therefore the prediction result :',result)
+---------------------------------
+PROJECT 3 🖥️ ECOMMERCE DISCOUNT CALCULATOR
 
 import pandas as pd
 
@@ -78,6 +84,8 @@ print('\n--- Checkout Bill ---')
 print('Original Price:', item_price)
 print('Offer Status:', status)
 print('Final Payable Amount:', final_bill)
+---------------------------------
+PROJECT 4 🖥️ IMAGE PROCESSING - COLOR TO GRAYSCALE CONVERTER
 
 import cv2
 import numpy as np
@@ -105,6 +113,8 @@ axes[1].set_title('Grayscale Image')
 plt.show()
 
 print('\nConversion Successful! Color image converted to Black & White.')
+---------------------------------
+PROJECT 5 🖥️ INSTAGRAM ALGORITHM - REEL VIRALITY PREDICTOR
 
 import pandas as pd
 
@@ -139,6 +149,8 @@ print('Likes:', test_likes)
 print('Shares:', test_shares)
 print('Comments:', test_comments)
 print('Algorithm Result:', result)
+---------------------------------
+PROJECT 6 🖥️ NLP MACHINE LEARNING - SENTIMENT ANALYZER (KNN)
 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -167,6 +179,8 @@ prediction = model.predict(test_X)
 
 print('Test Input:', test_review[0])
 print('ML Model Prediction:', prediction[0])
+---------------------------------
+PROJECT 7 🖥️ AI MEDICAL SCAN ANALYZER - HEART HOLE DETECTION
 
 import numpy as np
 import tensorflow as tf
@@ -203,3 +217,4 @@ result = analyze_heart_scan(test_patient_scan)
 
 print('\n--- Patient Heart Scan Analysis Report ---')
 print('AI Prediction Outcome:', result)
+---------------------------------
