@@ -1,0 +1,75 @@
+PROJECT 9 💻 AI BASED HR INTERVIEW EVALUATION SYSTEM
+print("AI BASED HR INTERVIEW EVALUATION SYSTEM")
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+questions = [
+    "Tell me about yourself",
+    "Why should we hire you?",
+    "What are your strengths?",
+    "What are your weaknesses?",
+    "Where do you see yourself in five years?"
+]
+
+ideal_answers = [
+    "I am a motivated professional with good communication skills, technical knowledge and a strong interest in learning new technologies.",
+    "You should hire me because I am hardworking, adaptable, responsible and have the skills required for this position.",
+    "My strengths are problem solving, teamwork, communication, time management and willingness to learn.",
+    "My weakness is that I sometimes focus too much on details, but I am learning to manage my time effectively.",
+    "In five years I see myself as an experienced professional taking more responsibility and contributing to the growth of the company."
+]
+
+scores = []
+
+print("=" * 55)
+print("        AI HR INTERVIEW SYSTEM")
+print("=" * 55)
+
+for i in range(len(questions)):
+    print("\nQuestion", i + 1)
+    print(questions[i])
+
+    answer = input("Your Answer: ")
+
+    vectorizer = TfidfVectorizer()
+
+    vectors = vectorizer.fit_transform([
+        answer,
+        ideal_answers[i]
+    ])
+
+    similarity = cosine_similarity(
+        vectors[0],
+        vectors[1]
+    )[0][0]
+
+    score = round(similarity * 100)
+
+    if score > 70:
+        feedback = "Excellent Answer"
+    elif score > 45:
+        feedback = "Good Answer"
+    else:
+        feedback = "Needs Improvement"
+
+    print("Score:", score, "%")
+    print("Feedback:", feedback)
+
+    scores.append(score)
+
+average = sum(scores) / len(scores)
+
+print("\n" + "=" * 55)
+print("INTERVIEW RESULT")
+print("=" * 55)
+
+print("Overall Score:", round(average, 2), "%")
+
+if average >= 70:
+    print("Result: Strong Candidate")
+elif average >= 50:
+    print("Result: Average Candidate")
+else:
+    print("Result: Needs More Preparation")
+
+print("=" * 55)
